@@ -1,0 +1,124 @@
+Korrektur Übungsblatt 3
+=======================
+
+Aufgabe 3.1 a)
+--------------
++---- fahrenheit.py ---
+| #!/usr/bin/python3
+| 
+| def fahrenheit_to_celsius(fahrenheit):
+|     return ((fahrenheit-32)*5/9)
+| 
+| def celsius_to_kelvin(celsius):
+|     return (celsius+273.15)
+| 
+| def fahrenheit_to_kelvin(fahrenheit):
+|     return celsius_to_kelvin(fahrenheit_to_celsius(fahrenheit))
+| 
+| fahrenheit = float(input("Geben sie die Temperatur in Fahrenheit als\
+| Fließkommazahl ein: "))
+| 
+| print("Fahrenheit: ", fahrenheit)
+| print("Celsius: ", round(fahrenheit_to_celsius(fahrenheit), 2))
+| print("Kelvin: ", round(fahrenheit_to_kelvin(fahrenheit), 2))
+|
++----------------------
+[successful tests: fahrenheit_to_celsius(9.11), fahrenheit_to_celsius(212), fahrenheit_to_celsius(32), fahrenheit_to_celsius(-459.67)]
+3/3
+
+
+Aufgabe 3.1 b)
+--------------
+[successful tests: celsius_to_kelvin(0), celsius_to_kelvin(-100), celsius_to_kelvin(-273.15)]
+3/3
+
+
+Aufgabe 3.1 c)
+--------------
+[successful tests: fahrenheit_to_kelvin(212), fahrenheit_to_kelvin(32), fahrenheit_to_kelvin(9.11)]
+1/1
+
+
+Aufgabe 3.1 d)
+--------------
+[Input] Geben sie die Temperatur in Fahrenheit alsFließkommazahl ein: 9.11
+Fahrenheit:  9.11
+Celsius:  -12.72
+Kelvin:  260.43
+3/3
+
+
+Aufgabe 3.2
+-----------
+
++---- easter.py ---
+| #!/usr/bin/python3
+| 
+| def K(x):
+|     return x / 100
+| 
+| def M(k):
+|     return (15 + (3 * k + 3) / 4 - (8 * k + 13) / 25)
+| 
+| def S(k):
+|     return (3 - (3 * k + 3) / 4)
+| 
+| def A(x):
+|     return (x % 19)
+| 
+| def D(a,m):
+|     return ((19 * a + m) % 30)
+| 
+| def R(d,a):
+|     return((d + a / 11) / 29)
+| 
+| def OG(d,r):
+|     return (21 + d - r)
+| 
+| def SZ(x,s):
+|     return (7 - (x + x / 4 + s) % 7)
+| 
+| def OE(og,sz):
+|     return (7 - (og - sz) % 7)
+| 
+| def OS(og,oe):
+|     return (og + oe)
+| 
+| def easterdate(x):
+|     k = K(x)
+|     m = M(k)
+|     s = S(k)
+|     a = A(x)
+|     d = D(a,m)
+|     r = R(a,m)
+|     og = OG(d,r)
+|     sz = SZ(x,s)
+|     oe = OE(og,sz)
+|     return OS(og,oe)
+| try: 
+|     jahr = int(input("Geben sie das Jahr zur bestimmung des Osterdatums an: "))
+| except ValueError:
+|     print("Geben sie bitte ein Jahr als ganzzahl ein!")
+|     quit()
+| print(str(int(easterdate(jahr))) + ". März")
++------------------
+
+Das Programm wird nur einmal nach Aufruf die gewünschte Ausgabe ausgeben und nicht bei jedem
+Aufruf easterdate(x) [-1]
+
+7/8
+
+
+Aufgabe 3.3
+-----------
++---- erfahrungen.txt ---
+| Aufwand: 1.5h
+| 
+| Aufgaben waren besser als beim Blatt Nr. 2.
++------------------------
+2/2
+
+
+Gesamtpunktzahl
+---------------
+19/20
