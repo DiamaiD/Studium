@@ -1,0 +1,7 @@
+Aufwand: 45 min
+
+Der Punkt dieser Aufgaben war es zu zeigen, dass schleifen oder rekursive
+Funktionen wichtig sind, aber ich finde wenn die Person schon vorerfahrungen
+bezüglich dessen hat und die Schleifen und Funktionen wertschätzt, dann sollte
+man diese auch bentzen können. Ich finde sollche beschränkungeni also nicht 
+als sinvoll.

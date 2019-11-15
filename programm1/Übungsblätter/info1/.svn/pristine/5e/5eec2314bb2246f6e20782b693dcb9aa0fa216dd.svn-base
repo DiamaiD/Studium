@@ -1,0 +1,57 @@
+#!/usr/bin/python3
+
+try: zahl = int(input("Geben sie eine positive ganze Dezimalzahl ein: "))
+except ValueError:
+ print("Sie haben keine positive ganze Dezimalzahl eingegeben.")
+ quit()
+
+if zahl < 0:
+ print("Sie haben keine positive ganze Dezimalzahl eingegeben.")
+ quit()
+
+zahloriginal = zahl
+
+if zahl > 255:
+ zahl = zahl % 255
+
+if zahl >= 128:
+ b7 = 1
+ zahl = zahl -128
+else: b7 = 0
+
+if zahl >= 64:
+ b6 = 1
+ zahl = zahl -64
+else: b6 = 0
+
+if zahl >= 32:
+ b5 = 1
+ zahl = zahl -32
+else: b5 = 0
+
+if zahl >= 16:
+ b4 = 1
+ zahl = zahl -16
+else: b4 = 0
+
+if zahl >= 8:
+ b3 = 1
+ zahl = zahl -8
+else: b3 = 0
+
+if zahl >= 4:
+ b2 = 1
+ zahl = zahl -4
+else: b2 = 0
+
+if zahl >= 2:
+ b1 = 1
+ zahl = zahl -2
+else: b1 = 0
+
+if zahl == 1:
+ b0 = 1
+else: b0 = 0
+
+print("Dezimalzahl: ", zahloriginal)
+print("Binärdarstellung: ", b7, b6, b5, b4, b3, b2, b1, b0)

@@ -1,0 +1,46 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Übungsblatt 1}
+
+\subsection*{Aufgabe 1}
+a) Nennen Sie einen Nachteil, den man durch die Verwendung von Schichtenmodellen hat.
+\\
+Bei dem durchlaufen durch die Schichten entsteht overhead, welcher die eigentlichen Daten um mehrere Bytes vergrößert.
+\\
+
+b) Woran ist das ISO/OSI-Modell gescheitert? D.h. warum wird es nicht verwendet?
+\\
+Das OSI-Modell ist ein sehr theoretisches Reference Modell, welches von Wissenschaftlern entwickelt wurde, es ist nicht besonders praxisnah. Dagegen ist das TCP/IP Protokoll, welches tatsächlich fast überall benutzt wird.
+\\
+
+c) Wo ist die Präsentationsschicht im Internet? Welche Vorteile würde sie im Internet bringen?\\
+Die Präsentationsschicht ist die Darstellungsschicht, diese sorgt dafür, dass die Bits in menschlich lesbare Schrift und Bild dargestellt wird, mit z.B. der Hilfe von ASCI. Der Vorteil dabei ist, dass wir Menschen die Darstellung des Browser nicht in Nullern und Einsen sehen müssen.
+\\
+
+d) Nennen Sie drei alltägliche Protokolle aus der Anwendungsschicht und deren Funktion.
+\\
+Radio-Streams - Informationsbeschaffung 
+\\
+E-Mail - Kommunikation mit Mitmenschen
+\\
+Online-Spiele - Unterhaltung
+\\
+
+e) Welche Schichten betreffen einen Router?
+\\
+Ein Router arbeitet auf der Netzwerkschicht bzw. Schicht 3 des OSI-Modells.
+
+\subsection*{Aufgabe 2}
+Analysieren Sie Ihren letzten Kauf eines Speichermediums hinsichtlich der wahren Speichermenge in Kibibits im Vergleich zur Herstellerangabe.
+\\ \\
+Auf der Verpackung steht meistens GB oder TB welches Gigabyte und Terabyte bedeutet. Der Computer jedoch, wenn man in Eigenschaften der Festplatte schaut, zeigt die verbleibende Anzahl der Bytes in Gigibyte an. Wenn man also 1 TB Festplatte gekauft hat, wird es in dem Computer als:\\ 1000 GB * 1000 * 1000 * 1000 / 1024 / 1024 / 1024 = 931.32 GiB angezeigt.
+
+
+\end{document}

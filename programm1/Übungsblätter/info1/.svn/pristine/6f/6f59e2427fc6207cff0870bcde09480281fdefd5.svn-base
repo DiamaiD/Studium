@@ -1,0 +1,22 @@
+###############
+# Aufgabe 1.2 #
+###############
+
+Bei der umgangssprachlichen Beschreibung handelt es sich um einen Algoriithmus,
+da hier eine Vorgehensweise schrittweise beschrieben wird.
+
+Präzision: Der beschriebene Algorithmus ist präzise, da bei den beschriebenen
+Einzelschritten keine uneindeutlichkeiten zu finden sind.
+
+Effiktivität: Jeder Einzelschritt ist unabhänging von den restlichen
+ausführbar, die Effiktivität ist also erfüllt.
+
+Finitheit: Da wir in dem Algorithmus eine Schleife mit variablen Eingaben
+haben, ist die Finitheit nicht statisch. Die Finitheit ist jedoch auch nicht
+dynamisch, da für Werte b<=0 in dem Algorithm eine unendliche Schleife erzeugt
+wird.
+
+Terminierung: da wir bei dem angegebenen Algorithmus eine Schleife haben und
+nicht überprüft wird ob b kleiner oder gleich null ist, kann es sich hier um
+eine unendliche schleife handeln wenn b kleiner oder gleich null ist. Die
+Terminierung ist also nicht sicher.

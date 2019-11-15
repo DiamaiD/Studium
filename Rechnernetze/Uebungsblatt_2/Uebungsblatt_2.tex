@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Übungsblatt 2}
+
+\subsection*{Aufgabe 1}
+a) Ein Sender A sendet ein Signal mit einer Leistung von 50 mW.\\
+
+1) Ein Empfänger B empfängt das Signal mit einer Stärke von 20 mW. Wie stark ist die Dämpfung in dB?
+
+$10 \log_{10} \frac{50mW}{20mW} = 4dB$\\
+
+2) Ein Empfänger C empfängt das Signal mit einer Dämpfung von 10 dB. Mit welcher Stärke
+in mW wird das Signal empfangen?
+
+$10 \log_{10} \frac{50mW}{x} = 10dB$ => x = 5mW\\
+
+b) Geben Sie je ein alltägliches Beispiel für folgende Phänomene an:\\
+
+1) Allgemeine Dämpfung findet man in z.B. einem Draht. Durch den spezifischen Widerstand im Draht wird das Signal mit der Länge des Drahtes in der Amplitude immer kleiner.\\
+
+2) Das Gerät ist zu träge und reagiert nicht schnell genug auf Frequenzänderungen, dadurch entsteht Frequenzverlust. \\
+
+3) Je höher die Frequenz der Schwingung einer Feder desto stärker wird diese gedämpft.\\
+
+4) Das Wlan-Signal wird z.B. durch eine Wand gestört.\\
+
+5) Das Handy zum Beispiel interferiert mit der Musik-Anlage und es entsteht ein Rauschen.
+
+
+
+\subsection*{Aufgabe 2}
+a)Wann ist ein Code selbsttaktend?
+
+Immer dann wenn kein zusätzlicher Takt zu den Daten mit übertragen wird.\\
+
+b) Die folgende Abbildung zeigt die Kodierung eines Wortes mittels NRZ-S.\\
+
+1) Dekodieren Sie das Wort und geben Sie die Bitfolge an.
+
+Bitfolge: 0 1 0 0 0 0 1 0 \ \  0 1 1 0 1 0 0 1 \ \  0 1 1 0 0 1 0 1 \ \  0 1 1 1 0 0 1 0\\
+
+2) Die Bitfolge ist eine in UTF-8 kodierte Zeichenfolge. Geben Sie diese an.
+
+0 1 0 0 0 0 1 0 => 66 => B
+
+0 1 1 0 1 0 0 1 => 105 => i
+
+0 1 1 0 0 1 0 1 => 101 => e
+
+0 1 1 1 0 0 1 0 => 114 => r
+
+=> Bier\\
+
+c) Entwerfen Sie zwei Kodierungen, wobei eine selbsttaktend sein soll, während die andere nicht selbsttaktend ist. Zeigen Sie für beide Kodierungen warum diese Eigenschaft erfüllt oder nicht erfüllt ist.\\
+
+selbsttakted: Zur Erkennung des Anfangs eines Frames in dem die Daten, sprich 0 und 1, übertragen werden, wird die Abfolge von FF FF in hex oder 16 mal die 1 in binär verwendet. Die eins binär wird durch die abfallende Spannungsflanke und die null durch die aufsteigende Spannungsflanke erkannt. Es wird nur ein Datenstrom versendet, dadurch handelt es sich hier um eine selbsttaktende Kodierung. \\
+
+nicht selbsttaktend: Zur Erkennung der eins und null in binär wird zu dem Datenstrom ein zusätzlicher Taktstrom geschickt. Dadurch dass ein zusätzlicher Takt mitgeschickt werden muss, handelt es sich hier um eine nicht selbstaktende Kodierung.
+
+
+
+
+
+\end{document}

@@ -1,0 +1,11 @@
+(a) Da wir hier zwei Integer multiplizieren wird auch das Endergebnis ein
+Integer sein.
+
+(b) Da wir hier ein Integer mit einem Float multiplizieren wird das
+Endergebnis ein Float sein.
+
+(c) Da wir hier einen Float hoch komplexe zahl nehmen wird das Endergebnis
+auch eine Komplexe Zahl sein.
+
+(d) Da wir hier mit Integern und Floats rechnen wird das Endergebnis ein Float
+sein.

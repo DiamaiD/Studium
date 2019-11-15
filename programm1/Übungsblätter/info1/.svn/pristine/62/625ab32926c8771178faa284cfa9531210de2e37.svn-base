@@ -1,0 +1,22 @@
+Aufgabe 2.1
+===========
+
+Aufgabe 2.1 (a) 
+---------------
+Da wir hier zwei Integer multiplizieren wird auch das Endergebnis ein
+Integer sein.
+
+Aufgabe 2.1 (b) 
+---------------
+Da wir hier ein Integer mit einem Float multiplizieren wird das
+Endergebnis ein Float sein.
+
+Aufgabe 2.1 (c) 
+---------------
+Da wir hier einen Float hoch komplexe zahl nehmen wird das Endergebnis
+auch eine Komplexe Zahl sein.
+
+Aufgabe 2.1 (d) 
+---------------
+Da wir hier mit Integern und Floats rechnen wird das Endergebnis ein Float
+sein.

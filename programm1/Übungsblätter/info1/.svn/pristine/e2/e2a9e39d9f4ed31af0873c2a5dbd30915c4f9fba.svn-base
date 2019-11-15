@@ -1,0 +1,71 @@
+Korrektur Übungsblatt 1
+=======================
+
+Aufgabe 1.1
+-----------
+2/2
+
+
+Aufgabe 1.2
+-----------
+* algorithmen.txt existiert nicht
+
+datei wurde nicht korrekt benannt [-1]
+Die Finitheit ist in beiden varianten dynamisch und statisch gegeben [-2]
+
+2/5
+
+
+Aufgabe 1.3 a)
+--------------
++---- pattern.py ---
+| #!/usr/bin/python3
+| 
+| ##################
+| # Aufgabe 1.3(a) #
+| ##################
+| 
+| a="="
+| b="-"
+| 
+| print((3*a+3*b)*5)
++-------------------
+6/6
+
+
+Aufgabe 1.3 b)
+--------------
++---- numbers.py ---
+| #!/usr/bin/python3
+| 
+| ###################
+| # Aufgabe 1.3 (b) #
+| ###################
+| 
+| print(((6+1)*(6+2)*10)-3)
+|
++-------------------
+
+Es sollte zusätzlich noch die ausgeführte Rechnung als string wiedergegeben werden.
+
+2/5
+
+
+Aufgabe 1.4
+-----------
++---- erfahrungen.txt ---
+| ###############
+| # Aufgabe 1.4 #
+| ###############
+| 
+| Aufwand ca. 2h
+| 
+| Die meiste Zeit wurde mit der Aufgabe 1.2 verbracht. Die schwierigkeit,
+| meiner Meinung nach, ist für das erste Arbeitsblatt passend gewählt.
++------------------------
+2/2
+
+
+Gesamtpunktzahl
+---------------
+14/20

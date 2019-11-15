@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Übungsblatt 3}
+
+\subsection*{Aufgabe 1}
+
+f: Verschiebung um $\frac{5}{4}\pi$ und Amp=2 => 7\\
+u: Verschiebung um $\frac{5}{4}\pi + 1\pi$ und Amp=2 => 5\\
+I: Verschiebung um $\frac{5}{4}\pi$ und Amp=1 => 6\\
+o: Verschiebung um $\frac{5}{4}\pi + \frac{1}{2}\pi$ und Amp=1 => 2
+
+\subsection*{Aufgabe 2}
+a)\\
+code0 = (-1,-1)\\
+code1 = (-1,1)\\
+code2 = (1,-1)\\
+
+b)\\
+((0,2),(-2,0),(2,0),(0,-2))*(1,1) = (2,-2,2,-2)
+\\
+die Nachricht ist also: 1010\\
+
+Möglichkeiten für B:\\
+((0,2),(-2,0),(2,0),(0,-2))*(-1,1) \ = (2,2,-2,-2) => 1100\\
+((0,2),(-2,0),(2,0),(0,-2))*(1,-1) \ = (-2,-2,2,2) => 1100\\
+((0,2),(-2,0),(2,0),(0,-2))*(-1,-1) = (-2,2,-2,2) => 0101\\
+
+c)\\
+Weil nur es nur 4 Möglichkeiten gibt den code zu kodieren.
+
+\subsection*{Aufgabe 3}
+a)\\
+Wenn das signal mit 0° abgesendet wird und dieser nicht durch z.B. einen Berg gehindert wird, und da die Erde rund ist, wird da Signal an der Ionosphere in 100-500km Höhe reflektiert und gelangt so zum Ziel.\\
+
+b)\\
+Das Signal befindet sich vermutlich hinter der Wand, und es gibt keine Möglichkeit, dass das Signal durch die Reflektion an z.B. anderen Wänden zum Ziel gelangen kann.\\
+\\
+
+c)\\
+Ein leaky feeder ist ein speziell geschirmter Kabel, welcher einen Radio Signal bereit stellt z.B. GSM-Signal in Tunellen. Dieser findet auch in Metro eine Verwendung.
+
+\end{document}
