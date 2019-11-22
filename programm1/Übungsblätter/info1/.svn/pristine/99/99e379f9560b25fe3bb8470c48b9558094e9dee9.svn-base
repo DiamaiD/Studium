@@ -9,15 +9,12 @@ recipes = [("Daiquiri", ["Rum", "Limette", "Zucker"]),
     ("Cuba Libre", ["Rum", "Coke"])]
 
 def mixable(xs: list) -> list:
-    """ Überprüfen ob die vorhandenen Zutat für bestimmte Cocktails ausreichen
-    """
     cocktail_possible = []
     for cocktail in recipes:
         notin = 0
         for incredient in cocktail[1]:
             if incredient not in xs:
                 notin += 1
-                break
         if notin == 0:
             cocktail_possible.append(cocktail[0])
     return cocktail_possible

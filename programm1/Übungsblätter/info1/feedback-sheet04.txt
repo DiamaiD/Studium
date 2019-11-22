@@ -1,0 +1,163 @@
+Korrektur Übungsblatt 4
+=======================
+
+Aufgabe 4.1
+-----------
+[manuelle Korrektur]
++---- bool.txt ---
+| ###############
+| # Aufgabe 4.1 #
+| ###############
+| 
+| Aufgabe 4.1 (a)
+| ---------------
+| x kann alle Werte die größer als 35 sind annehmen.
+| 
+| Aufgabe 4.1 (b)
+| ---------------
+| x muss kleiner oder gleich 3 sein und beim teilen durch drei darf es kein Rest
+| ergeben.
+| 
+| Aufgabe 4.1 (c)
+| ---------------
+| x und y müssen gleich groß sein.
+| 
+| Aufgabe 4.1 (d)
+| ---------------
+| Es gibt keinen Definitionsbereich für x und y, da die Funktion keinen
+| Rückgabewert hat.
++-----------------
+
+a) Def-Bereich ist x < 35 [-1]
+
+b) In dieser Funktion gibt es kein return(True) ist nicht weiter definiert gibt eine Funktion
+"None" aus [-1]
+
+c) c) Das ist nicht korrekt erstens was ist wenn x = 0 ? und was ist mit (-3) mod 3 ? [-1]
+
+d) Falsch Print ist kein Rückgabe wert. Ist keine Rückgabe mit "return" definiert wird als default
+"None" ausgegeben --> es wird nie True zurück gegeben [-1]
+
+0/4
+
+
+Aufgabe 4.2
+-----------
+* leap.py nimmt unzulässigerweise eine Benutzereingabe via input() [@Tutor: bitte prüfen!]
++---- leap.py ---
+| #!/usr/bin/python3
+| 
+| def leapyear(year) -> bool:
+|     if ((year % 4 == 0) and ((not year % 100 == 0) or (year % 400 == 0))):
+|         print("Das Jahr",year,"ist ein Schaltjahr.")
+|     else:
+|         print("Das Jahr",year,"ist kein Schaltjahr.")
+| year = (int(input("Geben sie das Jahr an: ")))
+| leapyear(year)
++----------------
+* leapyear(1997) gibt None zurück anstatt False
+* leapyear(1996) gibt None zurück anstatt True
+* leapyear(1900) gibt None zurück anstatt False
+* leapyear(2000) gibt None zurück anstatt True
+[failed tests: input, leapyear(1997), leapyear(1996), leapyear(1900), leapyear(2000)]
+
+Geleicher Fehler wie 4.1.d) die Funktionen geben keineen bool sonder "None" zurück
+das hier nicht return sonder print verwendent wurde
+
+0/5
+
+
+Aufgabe 4.3 a)
+--------------
++---- grading.py ---
+| #!/usr/bin/python3
+| 
+| def lineargrade(p: float) -> float:
+|     if p <= 12:
+|         return 6.0
+|     elif p >= 57:
+|         return 1.0
+|     else:
+|         note = ((-5/45)*(p-57)+1)
+|         if note % 1 >= 0.25 and note % 1 < 0.75:
+|             return (int(note) + 0.5)
+|         elif note % 1 >= 0.75:
+|             return (int(note) + 1.0)
+|         else:
+|             return float(int(note))
+| 
+| def passed(p: float) -> bool:
+|     if lineargrade(p) <= 4.0:
+|         return True
+|     else:
+|         return False
+| 
+| def mark(grade: float) -> str:
+|     if grade <= 6.0:
+|         return "F"
+|     elif grade >= 5.0:
+|         return "E"
+|     elif grade >= 4.0:
+|         return "D"
+|     elif grade >= 3.0:
+|         return "C"
+|     elif grade >= 2.0:
+|         return "B"
+|     else:
+|         return "A"
+| 
+| p = float(input("Geben sie die Punktzahl ein: "))
+| if p < 0:
+|     print("Sie haben negative Punkte eingegeben!")
+|     quit()
+| 
+| note = lineargrade(p)
+| 
+| print ("Erreichte Note:",note)
+| 
+| if passed(p) == True:
+|     print("==> Bestanden!")
+| else:
+|     print("==> nicht Bestanden!")
++-------------------
+[successful tests: lineargrade(0), lineargrade(36.5), lineargrade(37), lineargrade(60)]
+5/5
+
+
+Aufgabe 4.3 b)
+--------------
+[successful tests: passed(0), passed(27.5), passed(28), passed(33)]
+2/2
+
+
+Aufgabe 4.3 c)
+--------------
+* mark(1.8) gibt 'F' zurück anstatt 'A'
+* mark(2.3) gibt 'F' zurück anstatt 'B'
+* mark(3.1) gibt 'F' zurück anstatt 'C'
+* mark(4.7) gibt 'F' zurück anstatt 'D'
+* mark(5.5) gibt 'F' zurück anstatt 'E'
+[failed tests: mark(1.8), mark(2.3), mark(3.1), mark(4.7), mark(5.5)]
+[successful tests: mark(6.0)]
+
+Dein erstes If fängt schon alle möglichkeiten ab, da eine Note nie größer 6 sein kann.
+Deshalb wird nur F ausgegeeben. [-2]
+
+0/2
+
+
+Aufgabe 4.4
+-----------
+[manuelle Korrektur]
++---- erfahrungen.txt ---
+| Aufwand ca 2h.
+| 
+| Die Aufgaben waren diesmal anspruchsvoller, ich habe auf jeden Fall etwas neues
+| gelernt!
++------------------------
+2/2
+
+
+Gesamtpunktzahl
+---------------
+9/20

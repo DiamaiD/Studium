@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 def to_binary(x: int, n: int) -> list:
-    """ Dezimal zu binary rechner. """
     binary_list = []
     if (x > 2**(n)):
         x = x % 2**(n)
