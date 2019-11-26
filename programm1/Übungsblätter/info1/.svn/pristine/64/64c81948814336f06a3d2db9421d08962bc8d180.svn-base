@@ -1,0 +1,108 @@
+Korrektur Übungsblatt 5
+=======================
+
+Aufgabe 5.1
+-----------
++---- concatenated.py ---
+| #!/usr/bin/python3
+| 
+| def concatenated(xs: list) -> list:
+|     """ Liste aus Listen zu einer Liste umwandeln. """
+|     flat_list = []
+|     for sublist in xs:
+|         for item in sublist:
+|             flat_list.append(item)
+|     return flat_list
++------------------------
+3/3
+
+
+Aufgabe 5.2
+-----------
++---- overcooked.py ---
+| #!/usr/bin/python3
+| 
+| recipes = [("Daiquiri", ["Rum", "Limette", "Zucker"]),
+|     ("Mojito", ["Rum", "Limette", "Zucker", "Minze", "Soda"]),
+|     ("Whiskey Sour", ["Whiskey", "Zitrone", "Zucker"]),
+|     ("Tequila Sour", ["Tequila", "Zitrone", "Zucker"]),
+|     ("Moscow Mule", ["Vodka", "Limette", "Ginger ale"]),
+|     ("Munich Mule", ["Gin", "Limette", "Ginger ale"]),
+|     ("Cuba Libre", ["Rum", "Coke"])]
+| 
+| def mixable(xs: list) -> list:
+|     """ Überprüfen ob die vorhandenen Zutat für bestimmte Cocktails ausreichen
+|     """
+|     cocktail_possible = []
+|     for cocktail in recipes:
+|         notin = 0
+|         for incredient in cocktail[1]:
+|             if incredient not in xs:
+|                 notin += 1
+|                 break
+|         if notin == 0:
+|             cocktail_possible.append(cocktail[0])
+|     return cocktail_possible
++----------------------
+6/6
+
+
+Aufgabe 5.3
+-----------
++---- binary.py ---
+| #!/usr/bin/python3
+| 
+| def to_binary(x: int, n: int) -> list:
+|     """ Dezimal zu binary rechner. """
+|     binary_list = []
+|     if (x > 2**(n)):
+|         x = x % 2**(n)
+|     m = n
+|     for i in range(m):
+|         n -= 1
+|         if (x >= (2**(n))):
+|             binary_list.append(1)
+|             x = x - 2**(n) 
+|         else:
+|             binary_list.append(0)
+|     return binary_list
++------------------
+3/3
+
+
+Aufgabe 5.4
+-----------
++---- primes.py ---
+| #!/usr/bin/python3
+| 
+| def primes(n: int) -> list:
+|     """ Primes berechnen. """
+|     primzahlen = []
+|     for x in range(n):
+|         x += 1
+|         notprime = 0
+|         for prime in primzahlen:
+|             if (x % prime) == 0 and prime != 1:
+|                 notprime = 1
+|                 break
+|         if notprime == 0 and x != 1:
+|             primzahlen.append(x)
+|     return primzahlen
++------------------
+6/6
+
+
+Aufgabe 5.5
+-----------
+[manuelle Korrektur]
++---- erfahrungen.txt ---
+| Aufwand: ca 2.5h
+| 
+| Anspruchsvolle Aufgaben, aber gut machbar.
++------------------------
+2/2
+
+
+Gesamtpunktzahl
+---------------
+20/20
