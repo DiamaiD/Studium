@@ -1,0 +1,160 @@
+Korrektur Übungsblatt 6
+=======================
+
+Aufgabe 6.1 a)
+--------------
++---- poly_eval.py ---
+| #!/usr/bin/python3
+| import timeit
+| 
+| def poly_eval (p: list, x: float) -> float :
+|     """langsammer polynom Rechner"""
+|     result = 0
+|     i = 0
+|     for a in p :
+|         result = result + a * x ** i
+|         i = i + 1
+|     return result
+| 
+| def poly_eval_faster (p: list, x: float) -> float :
+|     """etwas schnellerer polynom Rechner"""
+|     result = 0
+|     fasterbase = 1
+|     for a in p :
+|         result = result + a * fasterbase
+|         fasterbase = fasterbase * x
+|     return result
+| 
+| def poly_eval_horner(p: list, x: float) -> float:
+|     """schneller polynom Rechner"""
+|     result = 0
+|     umkehrliste = p[::-1]
+|     for a in umkehrliste[:-1]:
+|         result = (result + a)*x
+|     result = result + umkehrliste[-1]
+|     return result 
+| 
+| def time_poly_eval(name: str):
+|     """funktion um die geschwindigkeit der polynom Rechner zu messen"""
+|     s = "from __main__ import "+name
+|     testliste = "["
+|     for i in range(2000):
+|         if i == 0:
+|             testliste = testliste+str(i)
+|         else:
+|             testliste = testliste+","+str(i)
+|     testliste = testliste+"]"
+|     if name == "poly_eval":
+|         teststring = "poly_eval("+testliste+",2)"
+|         print("Laufzeit von popy_eval:",timeit.timeit(teststring, 
+|             setup = s, number = 1000),"Sekunden")
+|     if name == "poly_eval_faster":
+|         teststring = "poly_eval_faster("+testliste+",2)"
+|         print("Laufzeit von popy_eval_faster:",timeit.timeit(teststring, 
+|             setup = s, number = 1000),"Sekunden")
+|     if name == "poly_eval_horner":
+|         teststring = "poly_eval_horner("+testliste+",2)"
+|         print("Laufzeit von popy_eval_horner:",timeit.timeit(teststring, 
+|             setup = s, number = 1000),"Sekunden")
++---------------------
+* poly_eval docstring ohne Args/Returns [-0.5]
+0.5/1
+
+
+Aufgabe 6.1 b)
+--------------
+* poly_eval_faster docstring ohne Args/Returns [-0.5]
+2.5/3
+
+
+Aufgabe 6.1 c)
+--------------
+* poly_eval_horner docstring ohne Args/Returns [-0.5]
+* poly_eval_horner([], 2) wirft "IndexError: list index out of range" anstatt 0 zurückzugeben
+
+Randfall leere Liste nicht betrachtet [-1]
+
+1.5/3
+
+
+Aufgabe 6.1 d)
+--------------
+* time_poly_eval docstring ohne Args/Returns [-0.5]
+2.5/3
+
+
+Aufgabe 6.2
+-----------
++---- fibonacci.py ---
+| #/usr/bin/python3
+| 
+| def fib(n: int) -> int:
+|     """Fibonaci Rechner"""
+|     fibliste = [0,1]
+|     n = n - 2
+|     for x in range(n):
+|         fibliste.append(fibliste[-1]+fibliste[-2])
+|     return fibliste
++---------------------
+* fib docstring ohne Args/Returns [-0.5]
+* fib(0) gibt [0, 1] zurück anstatt 0
+* fib(1) gibt [0, 1] zurück anstatt 1
+* fib(4) gibt [0, 1, 1, 2] zurück anstatt 3
+* fib(6) gibt [0, 1, 1, 2, 3, 5] zurück anstatt 8
+* fib(20) gibt [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181] zurück anstatt 6765
+
+Deine Funktion berechnet nicht fib(n) sonder fib(n-1) [-1]
+
+Es wird kein Int ausgegeben sonder eine Liste [-1]
+
+0.5/3
+
+
+Aufgabe 6.3 a)
+--------------
++---- palindromic.py ---
+| #!/usr/bin/python3
+| 
+| def is_palindromic(n: int) -> bool:
+|     """check if a number is a palindrom"""
+|     stringzahl = str(n)
+|     length = len(stringzahl)
+|     stringlist = list(stringzahl)
+|     for x in range(int(length/2)):
+|         if stringlist[x] != stringlist[-(x+1)]:
+|             return False
+|     return True
+| 
+| def max_palindrome() -> int:
+|     """calculates the highest palindrom from two 3 digit numbers"""
+|     max_palindrome = []
+|     for x in range(100,1000):
+|         for y in range(100,1000):
+|             if is_palindromic(x*y):
+|                 max_palindrome.append(x*y)
+|     return max(max_palindrome)
++-----------------------
+* is_palindromic docstring ohne Args/Returns [-0.5]
+2.5/3
+
+
+Aufgabe 6.3 b)
+--------------
+* max_palindrome docstring ohne Args/Returns [-0.5]
+1.5/2
+
+
+Aufgabe 6.4
+-----------
+[manuelle Korrektur]
++---- erfahrungen.txt ---
+| Aufwand ca. 3h
+| 
+| Anspruchsvolle Aufgaben, weiter so!
++------------------------
+2/2
+
+
+Gesamtpunktzahl
+---------------
+14.5/20
