@@ -18,14 +18,14 @@ right_motor = LargeMotor(OUTPUT_B)
 # from ev3dev2.sound import Sound
 sound = Sound()
 # sound.speak('Hallo ich bin Roberto ihr Pimmelberger!')
-schwarz = 50
+schwarz = 40
 speed1 = 0
 speed2 = 0
 basetime = 0.1
-normalspeed = 75
+normalspeed = 40
 turnlow = 15
-speedincrement = 35
-increment_of_increment = normalspeed/8
+speedincrement = 10
+increment_of_increment = normalspeed/12
 maxspeed = 100
 listenlänge = 5
 wandabstand = 20
@@ -35,49 +35,33 @@ def run():
     global speed1, speed2
     left_motor.run_direct()
     right_motor.run_direct()
-    geradendurchlauf = 1
 
     while True:
-        turned = 0
         leftlight = ls1.reflected_light_intensity
         rightlight = ls2.reflected_light_intensity
         abstand = us.distance_centimeters
-
-        if (leftlight < schwarz or rightlight < schwarz) and abstand < wandabstand:
-            leds.set_color("LEFT", "RED")
-            leds.set_color("RIGHT", "RED")
-            left_motor.duty_cycle_sp = 0
-            right_motor.duty_cycle_sp = 0
-            while True:
-                abstand = us.distance_centimeters
-                if abstand > wandabstand:
-                    break
-        elif leftlight < schwarz and rightlight < schwarz and abstand > wandabstand:
-            speed1 = (normalspeed*3 + normalspeed/geradendurchlauf*7) / 10
-            speed2 = (normalspeed*3 + normalspeed/geradendurchlauf*7) / 10
+        # speed1 = normalspeed
+        # speed2 = normalspeed
+        if leftlight < schwarz and rightlight < schwarz and abstand > wandabstand:
+            speed1 = normalspeed
+            speed2 = normalspeed
             speedincrement = 10
-            if geradendurchlauf > 1:
-                geradendurchlauf -= 1
         elif leftlight < schwarz and rightlight > schwarz:
-            geradendurchlauf = 30
-            speed1 = - speedincrement
-            speed2 = speedincrement
+            speed1 = normalspeed - kurvengeschwindigkeit - speedincrement
+            speed2 = normalspeed - kurvengeschwindigkeit + speedincrement
             if speed1 <= 0:
                 speed1 = 10
             if speed2 > 100:
                 speed2 = maxspeed
             speedincrement += increment_of_increment
-            turned = 1
         elif leftlight > schwarz and rightlight < schwarz:
-            geradendurchlauf = 30
-            speed1 =  speedincrement
-            speed2 = - speedincrement
+            speed2 = normalspeed - kurvengeschwindigkeit - speedincrement
+            speed1 = normalspeed - kurvengeschwindigkeit + speedincrement
             if speed2 <= 0:
                 speed2 = 10
             if speed1 > 100:
                 speed1 = maxspeed
             speedincrement += increment_of_increment
-            turned = 1
         elif leftlight > schwarz and rightlight > schwarz and abstand < wandabstand:
             turn()
         else:
@@ -86,10 +70,7 @@ def run():
         left_motor.duty_cycle_sp = speed1
         right_motor.duty_cycle_sp = speed2
 
-        time.sleep(0.002)
-        if turned == 1:
-            left_motor.duty_cycle_sp = 0
-            right_motor.duty_cycle_sp = 0
+        time.sleep(0.001)
 
 def turn():
     left_motor.duty_cycle_sp = normalspeed
