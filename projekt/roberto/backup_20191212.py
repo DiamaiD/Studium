@@ -59,7 +59,6 @@ def run():
             speedincrement = kurvengeschwindigkeit
             if geradendurchlauf > 1:
                 geradendurchlauf -= 1
-            # die korrektur abhängig von der zeit statt der geschwindigkeit machen!!!
             # if turned_left >= 1:
             #     speed2 = speed2/2
             # elif turned_right >= 1:
