@@ -18,17 +18,17 @@ right_motor = LargeMotor(OUTPUT_B)
 # from ev3dev2.sound import Sound
 sound = Sound()
 # sound.speak('Hallo ich bin Roberto ihr Pimmelberger!')
-schwarz = 50
+schwarz = 40
 speed1 = 0
 speed2 = 0
 basetime = 0.1
 normalspeed = 50
-turnlow = 5
+turnlow = -5
 maxspeed = 100
 increment_of_increment = normalspeed/8
 listenlänge = 5
 wandabstand = 20
-torabstand = 5
+torabstand = 10
 kurvengeschwindigkeit = 30
 
 def run():
@@ -51,7 +51,7 @@ def run():
             right_motor.duty_cycle_sp = 0
             while True:
                 abstand = us.distance_centimeters
-                if abstand > wandabstand:
+                if abstand > torabstand+1:
                     break
         elif leftlight < schwarz and rightlight < schwarz and abstand > torabstand:
             speed1 = (normalspeed*2 + normalspeed/geradendurchlauf*8) / 10
