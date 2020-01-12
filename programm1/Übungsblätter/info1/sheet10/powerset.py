@@ -1,22 +1,27 @@
 #!/usr/bin/python3
 
 def powerset(s: list) -> list:
-    powerlist = []
-    for i in range(len(s)):
-        powerlist += powerhelp(s[i:])
-    print(powerlist)
+    """produce a powerset of a list
 
-def powerhelp(left):
-    for i in range(len(left)):
-        if i == 0:
-            helplist = [left[0]]
-        else:
-            for j in left[i:-1]:
-                if i != j:
-                    helplist.append(j)
-    print(helplist)
-    return helplist
+        Args:
+            s (list): list of an arbitrary length
+        returns:
+            powerlist (list): powerset of the given list
+        example:
+            >>> powerset([1,2])
+            [[], [1], [2], [1, 2]]
+    """
+    powerlist = []
+    if len(s) != 0:
+        for i in powerset(s[1:]):
+            powerlist.append(i)
+            powerlist.append([s[0]]+i)
+    else:
+        powerlist.append([])
+    
+    return powerlist
+
 
 
 if __name__ == '__main__':
-    powerset([1,2,3])
+    print(powerset([1,2]))

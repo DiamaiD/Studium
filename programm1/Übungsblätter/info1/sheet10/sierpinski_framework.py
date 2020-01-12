@@ -21,6 +21,14 @@ class LSystem:
         return w
 
 def sierpinski(size: int, n: int):
+    """A function to draw a sierpinski triangle with the LSystem
+
+        Args:
+            size (int): size of the outer triangle
+            n (int): depth of the sierpinski triangle
+        returns:
+            None
+    """
     ls = LSystem("F-G-G", {'F':'F-G+F+G-F','G':'GG'})
     w = ls.generate(n)
     for i in w:

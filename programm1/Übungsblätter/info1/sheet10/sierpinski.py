@@ -17,6 +17,14 @@ def dreieckzeichnen(size):
     left(120)
 
 def sierpinski(size: int, n: int):
+    """A function to draw a sierpinski triangle
+
+        Args:
+            size (int): size of the outer triangle
+            n (int): depth of the sierpinski triangle
+        returns:
+            None
+    """
     if n == 0:
         dreieckzeichnen(size)
     else:
