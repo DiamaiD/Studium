@@ -1,19 +1,22 @@
 #!/usr/bin/python3
 
 def powerset(s: list) -> list:
-    n = 0
     powerlist = []
-    while n < len(s):
-        if n == 0:
-            for i in s:
-                powerlist.append([i])
+    for i in range(len(s)):
+        powerlist += powerhelp(s[i:])
+    print(powerlist)
+
+def powerhelp(left):
+    for i in range(len(left)):
+        if i == 0:
+            helplist = [left[0]]
         else:
-            for i in s:
-                for j in s[1:]:
-                    if i != j and [i,j] not in powerlist and []:
-                        powerlist.append([i,j])
-        n += 1
-    print (powerlist)
+            for j in left[i:-1]:
+                if i != j:
+                    helplist.append(j)
+    print(helplist)
+    return helplist
+
 
 if __name__ == '__main__':
-    powerset([1,2,3,4])
+    powerset([1,2,3])
