@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Übungsblatt 10}
+
+\subsection*{Aufgabe 1}
+
+a)
+
+1)
+
+Server: nginx/1.13.8
+\\
+
+2)
+
+\verb|Set-Cookie: _ZopeId="74278610A9Uijtl4GEQ"; Path=/|
+
+\verb|Set-Cookie: serverid=p4wn13-4; path=/|
+
+Also ja, es werden beim ersten response vom Server Cookies gesetzt.
+\\
+
+3)
+
+Connection: keep-alive 
+
+Also handelt es sich hier um persistentes HTTP.
+\\
+
+4)
+
+Protokoll http/1.1
+\\
+
+b)
+
+Es werden noch Ressourcen nachgeladen wie z.B. Bilder oder Javascript-Code.
+\\
+
+c)
+
+Das bedeutet es wird die gleiche Seite wie beim ersten Aufruf gebraucht, aber diese wird nicht neu vom Server geholt, da sie noch im Cache vom User eins zu eins existiert.
+
+
+\end{document}
