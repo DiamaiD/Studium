@@ -1,0 +1,80 @@
+Korrektur Übungsblatt 9
+=======================
+
+Aufgabe 9.1 (a)
+---------------
+* pylint zeigt 7 Verletzung(en) des Style Guides für wordtree.py (-1)
+* next_word hat keinen docstring (-1)
+* next_word('') wirft "IndexError: string index out of range" anstatt (None, '') zurückzugeben
+2/4
+
+
+Aufgabe 9.1 (b)
+---------------
+* pylint zeigt 7 Verletzung(en) des Style Guides für wordtree.py (-1)
+* Node.__init__ hat keinen docstring (-1)
+0/2
+
+
+Aufgabe 9.1 (c)
+---------------
+* tree_str hat keinen docstring (-1)
+* tree_str(<__main__.Node object at 0x7f653df3cac0>) gibt '<__main__.Node object at 0x7f653df3cac0>' zurück anstatt "Node('spam', 3, Node('eggs', 2, Node('Spam', 1, None, None), Node('ham', 1, None, Node('hamham', 1, None, None))), None)"
+* tree_str(<__main__.Node object at 0x7f653df3ccd0>) gibt '<__main__.Node object at 0x7f653df3ccd0>' zurück anstatt "Node('b', 3, Node('a', 2, None, None), None)"
+0/2
+
+
+Aufgabe 9.1 (d)
+---------------
+* word_tree hat keinen docstring (-1)
+* word_tree('12 3%') gibt <wordtree.py.Node object at 0x7f653df465b0> zurück anstatt None
+* word_tree('') wirft "IndexError: list index out of range" anstatt None zurückzugeben
+2/4
+
+
+Aufgabe 9.1 (e)
+---------------
+* word_freq hat keinen docstring (-1)
+* word_freq(<__main__.Node object at 0x7f653df46c40>, 'Eggs') wirft "AttributeError: 'NoneType' object has no attribute 'mark'" anstatt 0 zurückzugeben
+* word_freq(None, 'spam') wirft "AttributeError: 'NoneType' object has no attribute 'mark'" anstatt 0 zurückzugeben
+1/3
+
+
+Aufgabe 9.1 (f)
+---------------
+* pylint zeigt 7 Verletzung(en) des Style Guides für wordtree.py (-1)
+* print_tree hat keinen docstring (-1)
+1/3
+
+
+Aufgabe 9.2 (a)
+---------------
+* fireworks.py existiert nicht
+0/3
+
+
+Aufgabe 9.2 (b)
+---------------
+0/3
+
+
+Aufgabe 9.2 (c)
+---------------
+* fireworks.py existiert nicht
+0/3
+
+
+Aufgabe 9.2 (d)
+---------------
+0/1
+
+
+Aufgabe 9.3
+-----------
+* erfahrungen.txt existiert nicht
+0/2
+
+
+Gesamtpunktzahl
+---------------
+6/20
