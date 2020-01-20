@@ -1,0 +1,43 @@
+Korrektur Übungsblatt 10
+========================
+
+Aufgabe 10.1 (a)
+4/4
+
+
+Aufgabe 10.1 (b)
+----------------
+| ============================= test session starts ==============================
+| platform linux -- Python 3.8.0, pytest-5.3.2, py-1.8.1, pluggy-0.13.1 -- /usr/bin/python
+| cachedir: .pytest_cache
+| rootdir: /home/lukas/informatik_tutorat/vg112
+| collecting ... collected 0 items
+| 
+| ============================ no tests ran in 0.01s =============================
+0/4
+
+
+Aufgabe 10.2
+* pylint zeigt 2 Verletzung(en) des Style Guides für sierpinski.py (-1)
+    sheet10/sierpinski.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
+    sheet10/sierpinski.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+[successful tests: docstring]
+5/6
+
+
+Aufgabe 10.3
+------------
+* pylint zeigt 3 Verletzung(en) des Style Guides für sierpinski_framework.py (-1)
+    sheet10/sierpinski_framework.py:5:0: C0115: Missing class docstring (missing-class-docstring)
+    sheet10/sierpinski_framework.py:10:4: C0116: Missing function or method docstring (missing-function-docstring)
+    sheet10/sierpinski_framework.py:17:4: C0116: Missing function or method docstring (missing-function-docstring)
+3/4 
+
+
+Erfahrung:
+2/2
+
+Gesamtpunktzahl
+---------------
+14/20
+

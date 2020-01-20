@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.6.8, pytest-3.3.2, py-1.5.2, pluggy-0.6.0 -- /usr/bin/python3
+cachedir: .cache
+rootdir: /mnt/c/Informatik/programm1/Übungsblätter/info1/sheet11, inifile:
+collecting ... collected 4 items
+
+words.py::test_next_word_1 PASSED                                        [ 25%]
+words.py::test_next_word_2 PASSED                                        [ 50%]
+words.py::test_next_word_3 PASSED                                        [ 75%]
+words.py::test_next_word_4 PASSED                                        [100%]
+
+=========================== 4 passed in 0.02 seconds ===========================
