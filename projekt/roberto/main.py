@@ -20,21 +20,22 @@ mid_motor = LargeMotor(OUTPUT_D)
 # from ev3dev2.sound import Sound
 sound = Sound()
 # sound.speak('Hallo ich bin Roberto ihr Pimmelberger!')
-schwarzcolor = 30
-schwarz = 33
+schwarzcolor = 45
+schwarz = 43
 speedleft = 0
 speedright = 0
 speedmid = 0
 basetime = 0.1
-normalspeed = 75
+defaultspeed = 75
+normalspeed = defaultspeed
 turnlow = -5
 maxspeed = 100
-increment_of_increment = normalspeed/8
+increment_of_increment = normalspeed/8 # alt 8
 listenlänge = 5
 wandabstand = 20
 torabstand = 10
 kurvengeschwindigkeit = 30
-radkoeffizient = 16.7/9.7
+radkoeffizient = 16.7/9.7 # alt 16.7/9.7
 # leds.set_color("LEFT", "GREEN")
 # leds.set_color("RIGHT", "GREEN")
 # while True:
@@ -68,28 +69,6 @@ def run():
         rightlight = ls2.reflected_light_intensity
         midlight = ls3.reflected_light_intensity
         abstand = us.distance_centimeters
-
-        # if len(lichtwerte) < 40:
-        #     if midlight < schwarzcolor:
-        #         lichtwerte.append(1)
-        #     else:
-        #         lichtwerte.append(0)
-        # else:
-        #     if midlight < schwarzcolor:
-        #         lichtwerte = lichtwerte[1:]
-        #         lichtwerte.append(1)
-        #     else:
-        #         lichtwerte = lichtwerte[1:]
-        #         lichtwerte.append(0)
-
-        # for i in range(len(lichtwerte)):
-        #     if i == 0:
-        #         pass
-        #     else:
-        #         if not lichtwerte[i] == lichtwerte[i-1]:
-        #             aenderungen += 1
-        # if aenderungen >= 3:
-        #     klotz()
         
         
         if midlight	> schwarzcolor and abstand < wandabstand:
@@ -142,7 +121,9 @@ def run():
                 speedmid = 100
             else:
                 speedmid = normalspeed*radkoeffizient
-            for i in range(50):
+            oldmid = 0
+            mid = 0
+            for i in range(40):
                 midlight = ls3.reflected_light_intensity
                 oldmid = mid
                 if midlight < schwarzcolor:
@@ -152,7 +133,11 @@ def run():
                 if oldmid != mid:
                     aenderungen += 1
                 time.sleep(0.001)
-            if aenderungen >= 4:
+            # left_motor.duty_cycle_sp = 0
+            # right_motor.duty_cycle_sp = 0
+            # mid_motor.duty_cycle_sp = 0
+            # time.sleep(60)
+            if aenderungen >= 3:
                 klotz()
                 
                 
@@ -175,10 +160,11 @@ def turn(drehung=180):
     left_motor.duty_cycle_sp = normalspeed
     right_motor.duty_cycle_sp = - normalspeed
     mid_motor.duty_cycle_sp = 0
+    global speedleft, speedright, speedmid
     if normalspeed == 50:
         time.sleep(basetime*15/koeff) # 11 bei 50 speed, 6.5 bei 75
     elif normalspeed == 75:
-        time.sleep(basetime*10/koeff)
+        time.sleep(basetime*6.3/koeff)
 
 def start_turn():
     left_motor.duty_cycle_sp = normalspeed
@@ -248,7 +234,7 @@ def klotz():
     else:
         mid_motor.duty_cycle_sp = - normalspeed*radkoeffizient
 
-    time.sleep(basetime*2)
+    time.sleep(basetime*5)
 
     while True:
 
