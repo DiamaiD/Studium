@@ -1,0 +1,59 @@
+Korrektur Übungsblatt 12
+========================
+
+Aufgabe 12.1 (a)
+----------------
+3/3
+
+
+Aufgabe 12.1 (b)
+----------------
+3/3
+
+
+Aufgabe 12.1 (c)
+----------------
+* maut(<fleet.py.LKW object at 0x7f20ef5b36a0>) gibt 220 zurück anstatt 320
+1.5/2
+
+
+Aufgabe 12.2 (a)
+----------------
+* fraction.py existiert nicht
+* fraction.py existiert nicht
+0/2
+
+
+Aufgabe 12.2 (b)
+----------------
+0/1
+
+
+Aufgabe 12.2 (c)
+----------------
+0/3
+
+
+Aufgabe 12.2 (d)
+----------------
+0/2
+
+
+Aufgabe 11.2 (e)
+----------------
+0/2
+
+
+Aufgabe 11.3
+------------
++---- erfahrungen.txt ---
+| Aufwand: ca 1.5h(nur Aufgabe 1)
+| 
+| Relativ leichtes Thema.
++------------------------
+2/2
+
+
+Gesamtpunktzahl
+---------------
+9.5/20
