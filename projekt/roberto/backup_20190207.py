@@ -12,6 +12,7 @@ ls2 = LightSensor(INPUT_1) # rechts
 ls3 = ColorSensor(INPUT_2) # mitte
 leds = Leds()
 us = UltrasonicSensor()
+# tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
 left_motor = LargeMotor(OUTPUT_D)
 right_motor = LargeMotor(OUTPUT_A)
 mid_motor = LargeMotor(OUTPUT_C)
@@ -25,15 +26,15 @@ speedleft = 0
 speedright = 0
 speedmid = 0
 basetime = 0.1
-defaultspeed = 60
+defaultspeed = 75
 normalspeed = defaultspeed
 turnlow = -5
 maxspeed = 100
-increment_of_increment = normalspeed/20 # alt 8
+increment_of_increment = normalspeed/12 # alt 8
 listenlänge = 5
 wandabstand = 20
 torabstand = 10
-kurvengeschwindigkeit = 20 # alt 30
+kurvengeschwindigkeit = 50 # alt 30
 radkoeffizient = 16.7/9.7 # alt 16.7/9.7
 # leds.set_color("LEFT", "GREEN")
 # leds.set_color("RIGHT", "GREEN")
@@ -60,28 +61,16 @@ def run():
     turned_left = 0
     lichtwerte = []
     aenderungen = 0
-    speedleft = 0
-    speedmid = 0
-    speedright = 0
-    uszahl = 0
-    gerade = 1
-    abstand = us.distance_centimeters
+
+    
 
     while True:
         leftlight = ls1.reflected_light_intensity
         rightlight = ls2.reflected_light_intensity
         midlight = ls3.reflected_light_intensity
-        if uszahl > 8:
-            abstand = us.distance_centimeters
-            uszahl = 0
-        else:
-            uszahl += 1
-        left_motor.duty_cycle_sp = speedleft
-        right_motor.duty_cycle_sp = speedright
-        mid_motor.duty_cycle_sp = speedmid
+        abstand = us.distance_centimeters
         
-        time.sleep(0.001)
-
+        
         if midlight	> schwarzcolor and abstand < wandabstand:
             start_turn()
         elif midlight < schwarzcolor and abstand < torabstand:
@@ -93,20 +82,17 @@ def run():
                 if abstand > torabstand+1:
                     break
         elif midlight < schwarzcolor and (leftlight > schwarz and rightlight > schwarz):
-            if gerade > 1:
-                gerade -= 1
-            speedleft = normalspeed/gerade
-            speedright = normalspeed/gerade
-            speedmid = normalspeed*radkoeffizient/gerade
+            speedleft = normalspeed
+            speedright = normalspeed
+            speedmid = normalspeed*radkoeffizient
             speedincrement = kurvengeschwindigkeit
+            turned_left = 0
+            turned_right = 0
             if speedmid > 100:
                 speedmid = 100
-            continue
         elif leftlight > schwarz and rightlight < schwarz:
-            # speedleft = 50
             speedleft = speedincrement
-            # speedright = normalspeed - speedincrement
-            speedright = - speedincrement
+            speedright = normalspeed - speedincrement
             speedmid = speedincrement/2
             if speedleft > normalspeed:
                 speedleft = normalspeed
@@ -115,11 +101,9 @@ def run():
             if speedmid > normalspeed/2:
                 speedmid = normalspeed/2
             speedincrement += increment_of_increment
-            gerade = 10
-            continue
+            turned_right += 1
         elif  leftlight < schwarz and rightlight > schwarz:
-            # speedleft = normalspeed - speedincrement
-            speedleft = - speedincrement
+            speedleft = normalspeed - speedincrement
             speedright = speedincrement
             speedmid = speedincrement/2
             if speedright > normalspeed:
@@ -129,43 +113,43 @@ def run():
             if speedmid > normalspeed/2:
                 speedmid = normalspeed/2
             speedincrement += increment_of_increment
-            gerade = 10
-            continue
+            turned_left += 1
         elif midlight > schwarzcolor and (leftlight > schwarz and rightlight > schwarz):
-            speedleft = normalspeed
-            speedright = normalspeed
-            if normalspeed*radkoeffizient > 100:
-                speedmid = 100
-            else:
-                speedmid = normalspeed*radkoeffizient
-            oldmid = 0
-            mid = 0
-            for i in range(20):
-                midlight = ls3.reflected_light_intensity
-                oldmid = mid
-                if midlight < schwarzcolor:
-                    mid = 1
-                else:
-                    mid = 0
-                if oldmid != mid:
-                    aenderungen += 1
-                time.sleep(0.001)
+            # speedleft = normalspeed
+            # speedright = normalspeed
+            # if normalspeed*radkoeffizient > 100:
+            #     speedmid = 100
+            # else:
+            #     speedmid = normalspeed*radkoeffizient
+            # oldmid = 0
+            # mid = 0
+            # for i in range(40):
+            #     midlight = ls3.reflected_light_intensity
+            #     oldmid = mid
+            #     if midlight < schwarzcolor:
+            #         mid = 1
+            #     else:
+            #         mid = 0
+            #     if oldmid != mid:
+            #         aenderungen += 1
+            #     time.sleep(0.001)
 
-            # left_motor.duty_cycle_sp = 0
-            # right_motor.duty_cycle_sp = 0
-            # mid_motor.duty_cycle_sp = 0
-            # time.sleep(60)
+            left_motor.duty_cycle_sp = 0
+            right_motor.duty_cycle_sp = 0
+            mid_motor.duty_cycle_sp = 0
+            time.sleep(60)
             
-            if aenderungen >= 1:
-               klotz()
-
+            # if aenderungen >= 3:
+            #    klotz()
                 
                 
             
 
-        
+        left_motor.duty_cycle_sp = speedleft
+        right_motor.duty_cycle_sp = speedright
+        mid_motor.duty_cycle_sp = speedmid
 
-        
+        time.sleep(0.001)
         # if turned_right >= 1 or turned_left >= 1:
         #     left_motor.duty_cycle_sp = 0
         #     right_motor.duty_cycle_sp = 0
@@ -179,8 +163,8 @@ def turn(drehung=180):
     right_motor.duty_cycle_sp = - normalspeed
     mid_motor.duty_cycle_sp = 0
     global speedleft, speedright, speedmid
-    if normalspeed == 60:
-        time.sleep(basetime*9/koeff) # 11 bei 50 speed, 6.5 bei 75
+    if normalspeed == 50:
+        time.sleep(basetime*15/koeff) # 11 bei 50 speed, 6.5 bei 75
     elif normalspeed == 75:
         time.sleep(basetime*6.3/koeff)
 
@@ -188,16 +172,16 @@ def start_turn():
     left_motor.duty_cycle_sp = normalspeed
     right_motor.duty_cycle_sp = - normalspeed
     mid_motor.duty_cycle_sp = 0
-    if normalspeed == 60:
-        time.sleep(basetime*9) # 20 bei 50 speed, 12 bei 75
+    if normalspeed == 50:
+        time.sleep(basetime*20) # 20 bei 50 speed, 12 bei 75
     elif normalspeed == 75:
         time.sleep(basetime*12)
     left_motor.duty_cycle_sp = normalspeed
     right_motor.duty_cycle_sp = normalspeed
-    speedmid = normalspeed*radkoeffizient
+    mid_motor.duty_cycle_sp = normalspeed*radkoeffizient
+
     if speedmid > 100:
         speedmid = 100
-    mid_motor.duty_cycle_sp = speedmid
 
     while True:
         midlight = ls3.reflected_light_intensity
@@ -254,38 +238,27 @@ def klotz():
 
     time.sleep(basetime*5)
 
-    uszahl = 0
-    abstand = us.distance_centimeters
-    gerade = 1
-
     while True:
 
         leftlight = ls1.reflected_light_intensity
         rightlight = ls2.reflected_light_intensity
         midlight = ls3.reflected_light_intensity
-        if uszahl > 8:
-            abstand = us.distance_centimeters
-            uszahl = 0
-        else:
-            uszahl += 1
+        abstand = us.distance_centimeters
 
         if abstand < 20:
             break
         elif midlight < schwarzcolor and (leftlight > schwarz and rightlight > schwarz):
-            if gerade > 1:
-                gerade -= 1
-            speedleft = normalspeed/gerade
-            speedright = normalspeed/gerade
-            speedmid = normalspeed*radkoeffizient/gerade
+            speedleft = normalspeed
+            speedright = normalspeed
+            speedmid = normalspeed*radkoeffizient
             speedincrement = kurvengeschwindigkeit
+            turned_left = 0
+            turned_right = 0
             if speedmid > 100:
                 speedmid = 100
-
         elif leftlight > schwarz and rightlight < schwarz:
-            # speedleft = 50
             speedleft = speedincrement
-            # speedright = normalspeed - speedincrement
-            speedright = - speedincrement
+            speedright = normalspeed - speedincrement
             speedmid = speedincrement/2
             if speedleft > normalspeed:
                 speedleft = normalspeed
@@ -294,11 +267,9 @@ def klotz():
             if speedmid > normalspeed/2:
                 speedmid = normalspeed/2
             speedincrement += increment_of_increment
-            gerade = 10
-
+            turned_right += 1
         elif  leftlight < schwarz and rightlight > schwarz:
-            # speedleft = normalspeed - speedincrement
-            speedleft = - speedincrement
+            speedleft = normalspeed - speedincrement
             speedright = speedincrement
             speedmid = speedincrement/2
             if speedright > normalspeed:
@@ -308,17 +279,16 @@ def klotz():
             if speedmid > normalspeed/2:
                 speedmid = normalspeed/2
             speedincrement += increment_of_increment
-            gerade = 10
-        
+            turned_left += 1
 
         left_motor.duty_cycle_sp = speedleft
         right_motor.duty_cycle_sp = speedright
-        mid_motor.duty_cycle_sp = speedmid
+        mid_motor.duty_cycle_sp = - speedmid
     
-    left_motor.duty_cycle_sp = 99
-    right_motor.duty_cycle_sp = 99
+    left_motor.duty_cycle_sp = normalspeed
+    right_motor.duty_cycle_sp = normalspeed
     if normalspeed*radkoeffizient > 100:
-        mid_motor.duty_cycle_sp = 99
+        mid_motor.duty_cycle_sp = 100
     else:
         mid_motor.duty_cycle_sp = normalspeed*radkoeffizient
 
@@ -326,103 +296,40 @@ def klotz():
         abstand = us.distance_centimeters
         if abstand > 20:
             break
-        time.sleep(basetime*10)
+        time.sleep(basetime)
     
     left_motor.duty_cycle_sp = - normalspeed
     right_motor.duty_cycle_sp = - normalspeed
     if normalspeed*radkoeffizient > 100:
-        mid_motor.duty_cycle_sp = - 100
+        mid_motor.duty_cycle_sp = 100
     else:
-        mid_motor.duty_cycle_sp = - normalspeed*radkoeffizient
+        mid_motor.duty_cycle_sp = normalspeed*radkoeffizient
 
-    # time.sleep(basetime*10)
-    # while True:
-    #     midlight = ls3.reflected_light_intensity
-    #     if midlight < schwarzcolor:
-    #         time.sleep(basetime)
-    #         midlight = ls3.reflected_light_intensity
-    #         if midlight < schwarzcolor:
-    #             break
-    
-    # time.sleep(basetime*6)
-
-    # left_motor.duty_cycle_sp = - normalspeed
-    # right_motor.duty_cycle_sp = normalspeed
-    # mid_motor.duty_cycle_sp = 15
-    
-    # time.sleep(basetime*6)
-
-    # left_motor.duty_cycle_sp = normalspeed
-    # right_motor.duty_cycle_sp = normalspeed
-    # if normalspeed*radkoeffizient > 100:
-    #     mid_motor.duty_cycle_sp = 100
-    # else:
-    #     mid_motor.duty_cycle_sp = normalspeed*radkoeffizient
-
-    # time.sleep(basetime*3)
-
-    turn(180)
-
+    time.sleep(basetime*10)
     while True:
-
-        leftlight = ls1.reflected_light_intensity
-        rightlight = ls2.reflected_light_intensity
         midlight = ls3.reflected_light_intensity
-        if uszahl > 8:
-            abstand = us.distance_centimeters
-            uszahl = 0
-        else:
-            uszahl += 1
+        if midlight < schwarzcolor:
+            time.sleep(basetime)
+            midlight = ls3.reflected_light_intensity
+            if midlight < schwarzcolor:
+                break
+    
+    time.sleep(basetime*6)
 
-        if midlight < schwarzcolor and (leftlight > schwarz and rightlight > schwarz):
-            if gerade > 1:
-                gerade -= 1
-            speedleft = normalspeed/gerade
-            speedright = normalspeed/gerade
-            speedmid = normalspeed*radkoeffizient/gerade
-            speedincrement = kurvengeschwindigkeit
-            if speedmid > 100:
-                speedmid = 100
-        if midlight > schwarzcolor and (leftlight > schwarz and rightlight > schwarz):
-            left_motor.duty_cycle_sp = normalspeed
-            right_motor.duty_cycle_sp = normalspeed
-            mid_motor.duty_cycle_sp = normalspeed
-            time.sleep(basetime*5)
-            turn(90)    
-        elif leftlight > schwarz and rightlight < schwarz:
-            # speedleft = 50
-            speedleft = speedincrement
-            # speedright = normalspeed - speedincrement
-            speedright = - speedincrement
-            speedmid = speedincrement/2
-            if speedleft > normalspeed:
-                speedleft = normalspeed
-            if speedright < - normalspeed:
-                speedright = - normalspeed
-            if speedmid > normalspeed/2:
-                speedmid = normalspeed/2
-            speedincrement += increment_of_increment
-            gerade = 10
+    left_motor.duty_cycle_sp = - normalspeed
+    right_motor.duty_cycle_sp = normalspeed
+    mid_motor.duty_cycle_sp = 15
+    
+    time.sleep(basetime*6)
 
-        elif  leftlight < schwarz and rightlight > schwarz:
-            # speedleft = normalspeed - speedincrement
-            speedleft = - speedincrement
-            speedright = speedincrement
-            speedmid = speedincrement/2
-            if speedright > normalspeed:
-                speedright = normalspeed
-            if speedleft < - normalspeed:
-                speedleft = - normalspeed
-            if speedmid > normalspeed/2:
-                speedmid = normalspeed/2
-            speedincrement += increment_of_increment
-            gerade = 10
-        
-        
+    left_motor.duty_cycle_sp = normalspeed
+    right_motor.duty_cycle_sp = normalspeed
+    if normalspeed*radkoeffizient > 100:
+        mid_motor.duty_cycle_sp = 100
+    else:
+        mid_motor.duty_cycle_sp = normalspeed*radkoeffizient
 
-        left_motor.duty_cycle_sp = speedleft
-        right_motor.duty_cycle_sp = speedright
-        mid_motor.duty_cycle_sp = speedmid
+    time.sleep(basetime*3)
 
     
     

@@ -1,0 +1,47 @@
+Korrektur Übungsblatt 13
+========================
+
+Aufgabe 13.1
+------------
+* queens.py existiert nicht
+* queens.py existiert nicht
+0/11
+
+
+Aufgabe 13.2 (a)
+----------------
+* pylint zeigt 2 Verletzung(en) des Style Guides für fgrep.py (-1)
+    sheet13/fgrep.py:7:0: C0301: Line too long (87/79) (line-too-long)
+    sheet13/fgrep.py:18:0: W0311: Bad indentation. Found 17 spaces, expected 16 (bad-indentation)
+2/3
+
+
+Aufgabe 13.2 (b)
+----------------
+* pylint zeigt 2 Verletzung(en) des Style Guides für fgrep.py (-1)
+    sheet13/fgrep.py:7:0: C0301: Line too long (87/79) (line-too-long)
+    sheet13/fgrep.py:18:0: W0311: Bad indentation. Found 17 spaces, expected 16 (bad-indentation)
+1/2
+
+
+Aufgabe 13.2 (c)
+----------------
+* fgrep('eggs', '/home/lukas/informatik_tutorat/solution/feedback/test_fgrep.txt', False, False) gibt <generator object fgrep at 0x7f2e113d89e0> zurück anstatt [(1, 'teggs\n')]
+* fgrep('eggs', '/home/lukas/informatik_tutorat/solution/feedback/test_fgrep.txt', True, False) gibt <generator object fgrep at 0x7f2e113d89e0> zurück anstatt [(0, 'this\n'), (2, 'is.land\n'), (3, 'thespamisstrong\n'), (4, 'ea.rth\n'), (5, 'EggSpaMM\n'), (6, 'peace out\n'), (7, 'ich bin draussen\n'), (8, 'ehn\n')]
+* fgrep('Eggs', '/home/lukas/informatik_tutorat/solution/feedback/test_fgrep.txt', False, True) gibt <generator object fgrep at 0x7f2e113d8a50> zurück anstatt [(1, 'teggs\n'), (5, 'EggSpaMM\n')]
+0/2
+
+
+Aufgabe 13.3
+------------
++---- erfahrungen.txt ---
+| Aufwand ca. 1h (nur Aufgabe 2)
+| 
+| Immer gut zu wissen wie open file mit dem os.path funktioniert.
++------------------------
+2/2
+
+
+Gesamtpunktzahl
+---------------
+5/20
