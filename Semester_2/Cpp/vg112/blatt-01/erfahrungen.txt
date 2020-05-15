@@ -1,0 +1,9 @@
+Aufwand ca. 3h
+
+Ein Problem auf das ich gestoßen bin war, dass der $PATH von dem Ubuntu 20.04
+auf Windows 10 nicht /usr/local beinhaltet hatte, was sehr komisch ist.
+Aber der $PATH läßt sich leicht mit PATH=/usr/local:$PATH auf der Kommandozeile
+ergänzen. Ein weiteres Problem ergab sich beim Visual Studio, welches statt TAB
+automatisch 4 leerzeichen eingesetzt hatte, das führt beim makefile zu einem
+Problem da dieser TABs erwartet. Im Visual Studio kann man das aber vom File zu
+File unten rechts ändern.
