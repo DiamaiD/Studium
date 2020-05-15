@@ -1,4 +1,4 @@
-Aufwand ca. 3h
+Aufwand ca. 3,5h
 
 Ein Problem auf das ich gestoßen bin war, dass der $PATH von dem Ubuntu 20.04
 auf Windows 10 nicht /usr/local beinhaltet hatte, was sehr komisch ist.
