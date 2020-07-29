@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\includepdf[scale=.8,pagecommand=\section*{Aufgabe 1},page={1}]{Blatt02_Aufgabe1.pdf}
+\includepdf[scale=.8,page={2}]{Blatt02_Aufgabe1.pdf}
+
+\section*{Aufgabe 2}
+$2^{n^2}~>~n^n~>~(n+1)!~=~n!~>~(2^n)^2~>~3^n~>~2^n~>~n^{100}~>~10^{100}n~>~\\n\log n~>~\sqrt{n}~>~(\log n)^2~>~\log n^3~=~\log n~=~\log \sqrt{n}~>~\sqrt{\log n}$
+
+\section*{Aufgabe 3}
+\textbf{a)}\\
+In der Vorlesung wurden diese vier Algorithmen gezeigt:\\
+Selectionsort, Insertionsort, Mergesort und Quicksort.\\
+Davon sind jedoch nur Insertion sort und Mergesort stabil.\\
+
+\textbf{Beispiel für Selectionsort:}\\
+Die Zahlen in Klammern sind die Startindices\\
+
+unsorted array $=[2,1,4(2),6,4(4),3]$\\
+
+Wenn man jetzt mit dem Selectionsort aus der Vorlesung sortiert, dann bekommt man folgendes Array:\\
+sorted array $=[1,2,3,4(4),4(2),6]$\\
+
+Die einzelnen Schritte sind:\\
+$2\rightarrow1,~~ 2\rightarrow2,~~ 4(2)\rightarrow3,~~ 6\rightarrow4(4),~~ 6\rightarrow4(2),~~ 6\rightarrow6$\\
+
+Wie man sieht sind die beiden 4 in der falschen Reihenfolge, das bedeutet, dass Selectionsort instabil ist.\\
+
+\textbf{b)}\\
+\textbf{Selectionsort:}\\
+Wir würden beim Aufruf von Selectionsort am Anfang ein weiteres Array mit dem Startindex der Einzelnen Komponente befüllen.
+Also zum Beispiel:\\
+$[0,1,2,3]$ für eine liste mit 4 Elementen.\\
+
+Bei jedem Tausch von Elementen im Hauptarray, sollte auch im Indexarray die Indices getauscht werden, also zum Beispiel:\\
+Hauptarray: $[5,3,1]$\\
+Indexarray: $[0,1,2]$\\
+Tausch von 5 und 1 im Hauptarray:\\
+$[5,3,1] \rightarrow [1,3,5]$\\
+Also wird auch im Indexarray getauscht:\\
+$[0,1,2] \rightarrow [2,1,0]$\\
+
+Ein letzten Schritt den wir machen müssen, ist eine weitere If-bedingung einbauen, die bei gleichen Elementen die Indices im Indexarray überprüft.\\
+
+Damit wissen wir also welches Element, wenn diese gleich sind(zum Beispiel 4 und 4), im Startarray den kleineren Index hatte, und können somit Stabil sortieren.\\
+
+
+
+\end{document}

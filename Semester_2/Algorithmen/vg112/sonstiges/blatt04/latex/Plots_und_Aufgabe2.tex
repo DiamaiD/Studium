@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Plots}
+\begin{center}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Lineares Sondieren},
+    enlargelimits=false,
+    xlabel={Größe des Hashtables},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=x]
+{lineareSondieren.dat};
+\end{axis}
+\end{tikzpicture}
+
+\end{center}
+\vspace*{3mm}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	title={Lineares Sondieren, random},
+    enlargelimits=false,
+    xlabel={Größe des Hashtables},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=x]
+{lineareSondierenRandom.dat};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\clearpage
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	title={Doppel Hashing},
+    enlargelimits=false,
+    xlabel={Größe des Hashtables},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=x]
+{doppelHashing.dat};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	title={Doppel Hashing, random},
+    enlargelimits=false,
+    xlabel={Größe des Hashtables},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=x]
+{doppelHashingRandom.dat};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\clearpage
+
+\subsection*{Aufgabe 2}
+\textbf{a)}\\
+Die Erste for Schleife geht von $i=1$ bis $n-1$ durch das Array A.\\
+Die Zweite for Schleife geht von $j=0$ bis $i-1$ ebenfalls durch das Array A.\\
+Die Dritte for Schleife geht von $k=0$ bis $n-1$ ebenfalls durch das Array A.\\
+Dabei wird jeweils die Absolute Differenz von dem Element A[i] und dem Element A[j] mit dem Element A[z] verglichen und falls die gleich sind wird ein True zurückgegeben, und falls alle Schleifen durchlaufen und die If-Bedingung kein einziges mal zutrifft wird ein False zurückgegeben.\\
+
+Die asymptotische Laufzeit beträgt:~~~ $\mathcal{O}((n-1)(n-1)n) = \mathcal{O}(n^3)$\\
+
+\textbf{b)}\\
+\includegraphics[scale=0.8]{2b.jpg}\\
+
+Wie man an dem Pseudocode sieht, können wir mit Hashtables die Hintereinanderreihung von for Schleifen auf 2 statt 3 begrenzen, dadurch haben wir ein asymptotische Laufzeit von:~~~ $\mathcal{O}(n*n + n) ~=~ \mathcal{O}(n^2)$
+\clearpage
+
+\textbf{c)}\\
+\includegraphics[scale=0.77]{2c.jpg}\\
+
+Wie man an dem Pseudocode sieht, sortieren wir zuerst das Array A.\\
+Wie auch bei b beschränken wir uns hier auf zwei for Schleifen, das ist möglich weil wir eine sortierte Liste und den Binary Search verwenden, welches nur eine Laufzeit von $\mathcal{O}(\log n)$ hat.\\
+Die asymptotische Laufzeit insgesamt beträgt also:~~~ $\mathcal{O}(n*n*\log n) ~=~ \mathcal{O}(n^2 \log n)$
+
+
+
+
+ 
+
+\end{document}

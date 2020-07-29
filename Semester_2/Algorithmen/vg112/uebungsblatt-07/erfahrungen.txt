@@ -1,0 +1,8 @@
+Aufwand ca. 2-3h (nur Aufgabe 1)
+
+Ich verstehe nicht ganz wieso es zu AVL-Bäumen nur 3 Folien gibt.
+Im SS2014 waren es auch nur 3 Folien und die AVL-Bäume kamen in der Prüfung
+vor. Wieso? Wenn wir es lernen sollen wäre es dann nicht sinnvoll auch
+in der Vorlesung zu behandeln? Und wenn wir keine Zeit in der Vorlesung haben,
+dann sollten wir doch wenigstens die Folien bereit gestellt bekommen, so dass
+wir uns vom unseren Prof die AVL-Bäume aneignen und nicht von externen Quellen.

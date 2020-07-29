@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+\newcolumntype{g}{>{\columncolor{heading}}c}
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Übungsblatt 02}
+
+\subsection*{Aufgabe 2}
+Da es sich hier um eine Bijektive Abbildung handelt können insgesamt 3! (die 3 ist die Anzahl der Elemente in der Menge A), also maximal 6 Verknüpfungen gebildet werden.\\
+
+$ S_1 ~=~ \left( \begin{array}{c}
+a~~b~~c\\
+a~~b~~c
+\end{array} \right)$~~~~~~
+$ S_2 ~=~ \left( \begin{array}{c}
+a~~b~~c\\
+b~~a~~c
+\end{array} \right)$~~~~~~
+$ S_3 ~=~ \left( \begin{array}{c}
+a~~b~~c\\
+a~~c~~b
+\end{array} \right)$\\
+$ S_4 ~=~ \left( \begin{array}{c}
+a~~b~~c\\
+c~~b~~a
+\end{array} \right)$~~~~~~
+$ S_5 ~=~ \left( \begin{array}{c}
+a~~b~~c\\
+b~~c~~a
+\end{array} \right)$~~~~~~
+$ S_6 ~=~ \left( \begin{array}{c}
+a~~b~~c\\
+c~~a~~b
+\end{array} \right)$\\
+
+$S_1$ ist die Identität.\\
+
+Um die Verknüpfungstafel zu erstellen müssen wir die einzelnen Kombinationen durchprobieren und zuordnen. So sieht die Zuordnung aus:\\
+
+Allgemein: $f \circ g ~=~ f(g(x))$\\
+Beispiel:
+\begin{center}
+$f_2(g_3(a)) ~=~ f_2(a) ~=~ b$\\
+$\Rightarrow a \rightarrow b ~~\Rightarrow~~ f_2(g_3(x)) = S_2 ~oder~ S_5$\\
+$f_2(g_3(b)) ~=~ f_2(c) ~=~ c$\\
+$\Rightarrow b \rightarrow c ~~\Rightarrow~~ f_2(g_3(x)) = S_3 ~oder~ S_5$\\
+$\Rightarrow S_5$ muss also richtig sein.\\
+$\Rightarrow f_2(g_3(x)) = S_5$
+\end{center}
+
+Wenn man das obere Beispiel für alle Möglichkeiten durchgeht, bekommt man folgende Verknüpfungstabelle:
+\begin{center}
+\begin{tabular}{cg|cccccc}
+ &$f$\cellcolor{white} & & & & & & \\
+\rowcolor{heading}\cellcolor{white}$g$ & \cellcolor{odd}$\circ$ & $S_1$ & $S_2$ & $S_3$ & $S_4$ & $S_5$ & $S_6$\\ \hline
+&$S_1$ & $S_1$ & $S_2$ & $S_3$ & $S_4$ & $S_5$ & $S_6$ \\
+\rowcolor{odd}\cellcolor{white}&\cellcolor{heading}$S_2$ & $S_2$ & $S_1$ & $S_5$ & $S_6$ & $S_3$ & $S_4$ \\
+&$S_3$ & $S_3$ & $S_6$ & $S_1$ & $S_5$ & $S_4$ & $S_2$ \\
+\rowcolor{odd}\cellcolor{white}&\cellcolor{heading}$S_4$ & $S_4$ & $S_5$ & $S_6$ & $S_1$ & $S_2$ & $S_3$ \\
+&$S_5$ & $S_5$ & $S_4$ & $S_2$ & $S_3$ & $S_6$ & $S_1$ \\
+\rowcolor{odd}\cellcolor{white}&\cellcolor{heading}$S_6$ & $S_6$ & $S_3$ & $S_4$ & $S_2$ & $S_1$ & $S_5$
+\end{tabular}
+\end{center}
+
+\end{document}

@@ -1,0 +1,4 @@
+Aufwand ca. 16h
+
+Das mit Abstand stressigste Blatt in cpp bis jetzt, viele kleine Fehler
+führen zu stunden von recherche.

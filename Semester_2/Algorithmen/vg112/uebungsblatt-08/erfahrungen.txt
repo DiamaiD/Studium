@@ -1,0 +1,7 @@
+Aufwand ca. 5-6h
+
+Ausgabe Aufgabe 2b:
+[0, 23, 35, 49, 26, 12, 29, 21, 39, 34, 38, 47, 40, 19, 1, 30, 3, 4, 24, 22, 14, 7, 36, 20, 2, 28, 5, 25, 42, 8, 45, 13, 27, 44, 43, 17, 32, 33, 46, 9, 37, 18, 16, 31, 6, 15, 41, 10, 48, 11]
+
+Aufgabe 2b:
+Frühstmöglicher Zeitpunkt an dem alle Jobs erledigt sind, ist 17.

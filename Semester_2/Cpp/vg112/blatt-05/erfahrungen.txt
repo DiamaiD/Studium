@@ -1,0 +1,9 @@
+Aufwand ca. 2-3h
+
+Diesmal ein relativ leichtes Blatt im vergleich zum letzten, welches bis jetzt
+mit Abstand das schwerste Blatt war. Ich finde es gut dass der Fokus diesmal
+nicht auf dem GameOfLife sondern beim lernen von Klassen lag.
+
+Ob wir in einem zellulären Automaten leben oder nicht, spielt für mich keine
+Rolle, da so eine Erkenntniss mein Wahrnehmen vom Leben im Allgemeinen
+höchstwahrscheinlich nicht verändern würde.

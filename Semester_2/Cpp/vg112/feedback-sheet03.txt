@@ -1,0 +1,39 @@
+Feedback Blatt 2
+================
+
+Aufgabe 1
+----------------
+Passt alles
+5/5
+
+
+Aufgabe 2
+----------------
+passt ebenfalls
+5/5
+
+
+Aufgabe 3
+----------------
+Passt auch :)
+5/5
+
+Aufgabe 4
+----------------
+Mann kan all die male wo Ball da steht duchr eine vaiable ersetzen das macht das wider verwenden sehr viel einfacher -1
+Weiter sollte auch der test bei make compile compiliert werden und nicht nur die main.
+4/5
+
+Generelles
+----------------
+zu den test gillt an sich Test für nicht tiviale funktionen die man testen kann.
+
+
+Gesamtpunktzahl
+---------------
+19/20
+
+
+Bei Fragen gerne bei mir per Mail melden.
+
+Gruß Darius (daris.st@googlemail.com)

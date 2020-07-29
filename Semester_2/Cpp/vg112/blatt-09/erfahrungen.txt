@@ -1,0 +1,8 @@
+Aufwand ca. 6-8h
+
+Ich bin überascht, dass bei Matrix(erster Film) in den 15 häufigsten Wörten zwei
+Farben(black 40, brown 37) vorkommen.
+
+Sehr viel neue Syntax, somit auch wieder viel googlen. Ich bin auf jeden fall
+von python zu sehr verwöhnt.
+

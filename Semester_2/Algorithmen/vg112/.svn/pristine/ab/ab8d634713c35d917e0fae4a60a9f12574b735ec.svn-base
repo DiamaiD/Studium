@@ -1,0 +1,68 @@
+"""
+ListElement class that represents a single element
+in the list
+
+Copyright 2020, University of Freiburg.
+
+Philipp Schneider <philipp.schneider@cs.uni-freiburg.de>
+"""
+
+
+class ListElement:
+    '''
+    Class represents element of the list
+    '''
+
+    _key = None
+    '''The key element of the ListElement'''
+
+    _next = None
+    '''Pointer to the left neighbor of this element'''
+
+    def __init__(self, key=None):
+        '''
+        Default constructor
+        '''
+        self._key = key
+        self._next = None
+
+    def set_next(self, next_element):
+        '''
+        Set pointer to next list element
+        Args:
+            ListElement next_element - object to point to
+        '''
+        self._next = next_element
+
+    def get_next(self):
+        '''
+        Get the pointer of _next object.
+        Returns:
+            ListElement: Get the next object
+        '''
+        return self._next
+
+    def set_key(self, key):
+        '''
+        Set key value of current list element
+        Args:
+            key - key value to set
+        '''
+        self._key = key
+
+    def get_key(self):
+        '''
+        Get key value of current list element
+        Returns:
+            key value of current list element
+        '''
+        return self._key
+
+    def __str__(self):
+        '''
+        Return string representation of current
+        list element
+        Returns:
+            string of current element
+        '''
+        return '[' + str(self._key) + ']'

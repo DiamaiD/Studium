@@ -1,0 +1,48 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Aufgabe 1}
+\textbf{a)}\\
+Es werden zu viele Kollisionen erzeugt, da:\\
+
+$h(x)=h(x+1)=h(x+2)=...=h(x+m-1)$\\
+
+\textbf{b)}\\
+Bei dieser Hashfunktion werden die geraden Hashslots nie befüllt, was natürlich schlecht ist, da nur die Hälfte der Hashtabelle benutzt werden kann.\\
+
+\textbf{c)}\\
+es sei $x~=~m-1$\\
+
+$h(m-1)~=~m-1 \mod m + \lfloor \frac{m}{m-1+1} \rfloor~=~m-1+1~=~m$\\
+
+Es gibt aber keinen Eintrag mit dem Hashindex m, die Tabelle geht nur bis m-1, es gibt also beim insert einen error.\\
+
+\textbf{d)}\\
+Das geht leider nicht, da wir sonst nicht mehr die find Funktion auf die Hashtabelle ausführen können, da wir einen anderen Hashwert beim \textquotedbl find\textquotedbl ~bekommen als beim \textquotedbl insert\textquotedbl ~in die Tabelle.\\
+
+\textbf{e)}\\
+Wenn man $x = 0$ einsetzt haben wir $\frac{M}{0}$ was natürlich nicht möglich ist, da teilen durch Null nicht definiert ist.\\
+
+
+\textbf{f)}\\
+Hier verwenden wir also gute Algorithmen, aber dadurch dass wir hier $l$ Algorithmen hintereinander verwenden steigt unsere Time Complexity von $\mathcal{O}(1)$ auf $\mathcal{O}(l)$, was natürlich schlecht ist.
+\clearpage
+
+\section*{Aufgabe 2}
+\textbf{a)}\\
+es sei $x=m$ und $y~=~x+m$ für $a$ beliebig
+
+$h(x)~=~a \cdot m^2 \mod m~=~0$\\
+$h(y)~=~a \cdot(m+m)^2 \mod m~=~ 0$\\
+%$a\cdot 2x \cdot m \mod m ~=~ 0$~,~~~~~~$a\cdot m^2 \mod m~=~ 0$\\
+$\Rightarrow~~x\neq y~, ~~h(x)=h(y)$\\
+
+Der Hashwert von $h(y)$ ist also gleich dem Hashwert von $h(x)$, für alle $a\in\mathcal{S}$. Da alle Hashwerte kollidieren, ist die Menge $\mathcal{H}_1$ nicht $c$-universell.\\
+
+\end{document}

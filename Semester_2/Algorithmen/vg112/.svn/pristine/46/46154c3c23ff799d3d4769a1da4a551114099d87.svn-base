@@ -1,0 +1,25 @@
+Aufwand ca. 8-10h
+
+Also wie man an den Plots sieht, ist RadixSort besser ab ca. k = 10 000,
+bei n = 40 0000, bis zu diesem Punkt ist BucketSort besser.
+
+Vom Aufwand war das Blatt03 besser als Blatt01, das lag aber daran dass
+Radixsort und Bucketsort leichter zu verstehen sind als Quicksort, zumindestens
+für meine Gruppe. Und natürlich der Fakt dass wir die Plots schon mal bei
+Blatt01 gemacht hatten. Ich finde das Aufgabenbaltt streut zu viele unnötige
+Verwirrugen bei der Aufgabenstellung und bei dem übergebenen Code.
+Z.B. ist bei Aufgabe 1 von Datum die Rede, was unnötig verwirrt und Zeit
+kostet. Oder auch die Bennenung der Datenvariable bei ListElement, es ist
+von key die rede, was total verwirrt, weil man denkt dass dort der key
+von der Funktion hingehört, was natürlich falsch ist. Aber wenn man gerade
+den Algorithm lernt, ist man sich natürlich bei allem nicht sicher, und
+verschwendet wegen sollchen in die Irre führenden variablennamen sehr
+viel Zeit. Bei uns waren es locker 2-3h, bei dennen wir im Kreis gelaufen
+sind.
+
+Gruppenmitglieder:
+
+Viktor Gange 4924109
+Feichen Ou 4772861
+Xinying Lu 4968016
+

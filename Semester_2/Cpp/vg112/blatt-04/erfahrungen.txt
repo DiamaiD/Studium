@@ -1,0 +1,8 @@
+Aufwand ca. 10h
+
+Ich finde es ist einbischen zu viel für ein Blatt.
+Mir wäre es lieber wenn der Fokus auf den Zeigern und nicht dem
+GameOfLife gelegen hätte.
+
+John Horton Conway was "terribly introverted adolescent" in school.
+

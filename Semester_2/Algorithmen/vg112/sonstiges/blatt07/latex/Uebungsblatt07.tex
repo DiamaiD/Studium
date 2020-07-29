@@ -1,0 +1,30 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Aufgabe 1}
+\textbf{a)}\\
+\textbf{Der linke Baum} ist ein Rot-Schwar-Baum.\\
+
+\textbf{Der mittlere Baum} ist ebenfalls ein Rot-Schwarz-Baum.\\
+
+\textbf{Der rechte Baum} ist kein Rot-Schwarz-Baum, es wird die Regel Nummer 5 verletzt.\\
+
+\textbf{b)}\\
+\textbf{Insert 8}\\
+Die 8 wird an der Stelle des linken Kindes von 9 eingesetzt. Dadurch wird die Regel 5 von Rot-Schwarz-Bäumen verletzt, wir müssen also rotieren.\\
+Zuerst machen wir eine rechts Rotation um die 9 und dann eine links Rotation um die 7. Das Ergebnis sieht dann so aus:\\
+
+\includegraphics[scale=0.23]{insert}\\
+
+\textbf{delete 5}\\
+Durch das entfernen von 5 wird wieder die Regel Nummer 5 verletzt. Wir machen zuerst eine links Rotation um die 1, dann eine rechts Rotation um die 4 und als letztes noch färben wir die 4 um von Rot ins Schwarz. Das Ergebnis sieht dann so aus:\\
+
+\includegraphics[scale=0.25]{delete}\\
+
+\end{document}

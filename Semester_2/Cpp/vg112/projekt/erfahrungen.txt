@@ -1,0 +1,8 @@
+Aufwand ca. 20-24h
+
+Das Projekt war ok. Ich hätte lieber ein anderes Spiel programmiert, zum
+Beispiel Minesweeper, mit speziellen Elementen damit es nicht zu leicht ist.
+Bei dem Projekt konnte ich jedoch einiges lernen, und ich finde es war eine
+gute Übung, besser als die Blätter, könnte aber auch daran liegen dass der
+Aufwand auch 3-4 mal so groß war als bei den Blättern.
+

@@ -1,0 +1,142 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Plots}
+\begin{center}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Quicksort, pivot links, zufällige Elemente},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{quicksort_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\vspace*{5mm}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Quicksort, pivot random, zufällige Elemente},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{quicksort_random_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\clearpage
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Quicksort, pivot links, paarweise verschieden},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{quicksort_reverse_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\vspace*{5mm}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Quicksort, pivot random, paarweise verschieden},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{quicksort_reverse_random_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\clearpage
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={selectionsort, paarweise verschieden},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{selectionsort_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\vspace*{5mm}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={selectionsort, zufällige Elemente},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{selectionsort_random_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\clearpage
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Mergesort, paarweise verschieden},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{mergesort_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\vspace*{5mm}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Mergesort, zufällige Elemente},
+    enlargelimits=false,
+    xlabel={Anzahl Elemente im Array},
+    ylabel={Zeit [ms]}
+]
+\addplot+[
+    scatter]
+table[meta=ma]
+{mergesort_random_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+
+\end{center}
+\end{document}

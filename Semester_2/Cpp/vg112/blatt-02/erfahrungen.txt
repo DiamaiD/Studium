@@ -1,0 +1,6 @@
+Aufwand ca. 2,5h
+
+Die Übung war relativ einfach. Habe mich ca 30 min wegen einem semicolon
+fehler in der .h Datei aufgehalten, aber ansonsten lief es relativ sauber.
+Ich finde die Vorlesung von der Strucktur und den Erklärungen deutlich besser
+als die Vorlesungen von Algorithmen.

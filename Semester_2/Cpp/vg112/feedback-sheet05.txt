@@ -1,0 +1,21 @@
+Feedback Blatt 2
+================
+
+Aufgabe 1
+----------------
+Es sollten alle vaiablen initalisirungen im konstuctor sein an sonsten
+Passt alles
+20/20
+
+Generelles
+----------------
+
+
+Gesamtpunktzahl
+---------------
+20/20
+
+
+Bei Fragen gerne bei mir per Mail melden.
+
+Gruß Darius (daris.st@googlemail.com)

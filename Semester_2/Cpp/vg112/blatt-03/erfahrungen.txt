@@ -1,0 +1,6 @@
+Aufwand ca. 5-6h
+
+Diesmal deutlich aufwendiger als bei Blatt 1 und 2, aber aufjedenfall machbar.
+Ich war unsicher für welche Funktionen tests erwartet werden, es wäre sehr
+hilfreich wenn in der Aufgabenstellung erwähnt wird zu welchen Funktionen
+Tests erwartet werden.

@@ -1,0 +1,14 @@
+Aufwand ca. 5h
+
+Die Aufgaben waren diesmal Anspruchsvoll, aber auch in einer guten Zeit
+machbar.
+
+zu Aufgabe 2b:
+Wie man an den Plots sieht, ist das doppelhashing bei Random und nicht Random
+befülltem Array entweder gleichschnell oder schneller als lineares Sondieren.
+
+Gruppenmitglieder:
+
+Viktor Gange 4924109
+Feichen Ou 4772861
+Xinying Lu 4968016

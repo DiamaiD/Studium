@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper,headsepline]{scrreprt}
+
+\input{config.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+
+
+% Inhalt
+\section*{Plots}
+\begin{center}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Bucketsort},
+    enlargelimits=false,
+    xlabel={größe von k},
+    ylabel={Zeit [ms]},
+    scaled x ticks = false
+]
+\addplot+[
+    scatter]
+table[meta=x]
+{bucketsort_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\vspace*{3mm}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Radixsort},
+    enlargelimits=false,
+    xlabel={größe von k},
+    ylabel={Zeit [ms]},
+    scaled x ticks = false
+]
+\addplot+[
+    scatter]
+table[meta=x]
+{radixsort_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\vspace*{3mm}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title={Zusammengeführt},
+    enlargelimits=false,
+    xlabel={größe von k},
+    ylabel={Zeit [ms]},
+    scaled x ticks = false
+]
+\addplot+[
+    scatter]
+table[x index=0,y index=1,col sep=tab]
+{zusammen_data.dat};
+\addplot+[
+    scatter]
+table[x index=0,y index=2,col sep=tab]
+{zusammen_data.dat};
+\end{axis}
+\end{tikzpicture}
+
+\end{center}
+\clearpage
+
+\textbf{Aufgabe 3}\\
+\textbf{c)}\\
+
+Die Laufzeit für BucketSort ist: $\mathcal{O}(2n+k)$\\
+Diese besteht aus:\\
+erste Schleife, also erstellen der Buckets, mit k Durchläufen.\\
+zweite Schleife, also befüllen der Buckets, mit n Durchläufen.\\
+dritte Schleife, also leeren der Buckets, mit ebenfalls n Durchläufen.\\
+
+Die Laufzeit von Radixsort ist: $\mathcal{O}(2n\lfloor\log_{10}{k}\rfloor)$\\
+Wir rufen Bucketsort mit $k = 9$ $\lfloor\log_{10}{k}\rfloor$ mal auf, da wir für jede Stelle der Zahl k sortieren müssen.\\
+Theoretisch wären es 2n+10, weil wir Bucketsort mit $k = 9$ aufrufen, und nicht 2n, aber die +10 kann man weglassen.\\
+
+
+
+\end{document}

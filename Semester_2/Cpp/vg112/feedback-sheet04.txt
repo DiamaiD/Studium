@@ -1,0 +1,47 @@
+Feedback Blatt 4
+================
+
+Aufgabe 1
+----------------
+Eigentlich sollte via einer variable die größen der array zugewisen werden
+2/2
+
+
+Aufgabe 2
+----------------
+Passt
+3/3
+
+
+Aufgabe 3
+----------------
+Super gemacht auch das die grenzen gemappt wurden
+5/5
+
+Aufgabe 4
+----------------
+Passt alles
+3/3
+
+Aufgabe 5
+----------------
+Funktioniert
+2/2
+
+Aufgabe 6
+----------------
+Namen der Main und Test methoden sollen breechnet werden -2
+3/5
+
+Generelles
+----------------
+
+
+Gesamtpunktzahl
+---------------
+18/20
+
+
+Bei Fragen gerne bei mir per Mail melden.
+
+Gruß Darius (daris.st@googlemail.com)

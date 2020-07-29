@@ -1,0 +1,29 @@
+Feedback Blatt 2
+================
+
+Aufgabe 1
+----------------
+passt
+8/8
+
+
+Aufgabe 2
+----------------
+Es tut mir leid das ich das jetzt nochmal nachtragen muss.
+Es fehlen die dependences für die .h dateien diese müssen bei allen datein beim compiliren eingefügt werden wo die .h includet wird daher -1p
+7/8
+
+
+Aufgabe 3
+----------------
+passt
+4/4
+
+Gesamtpunktzahl
+---------------
+19/20
+
+
+Bei Fragen gerne bei mir per Mail melden.
+
+Gruß Darius (daris.st@googlemail.com)
